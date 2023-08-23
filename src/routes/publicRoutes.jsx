@@ -4,7 +4,7 @@ import Login from '../pages/public/Login';
 function PublicRoutes() {
   return (
     <Routes>
-        <Route path="/login" exact element={ <Login /> } />
+        <Route path="/" exact element={ <Login /> } />
     </Routes>
   )
 }
