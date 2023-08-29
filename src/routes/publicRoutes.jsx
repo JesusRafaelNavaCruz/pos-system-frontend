@@ -1,12 +1,15 @@
+/* eslint-disable react/prop-types */
 import {Route, Routes} from "react-router-dom";
-import Login from '../pages/public/Login';
 
-function PublicRoutes() {
+// Components
+import Login from "../pages/public/Login";
+
+const PrivateRoutes = () => {
   return (
     <Routes>
-        <Route path="/" exact element={ <Login /> } />
+      <Route path="/" element={ <Login /> } />
     </Routes>
   )
 }
 
-export default PublicRoutes;
+export default PrivateRoutes;

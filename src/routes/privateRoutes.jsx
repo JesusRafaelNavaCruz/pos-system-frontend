@@ -1,10 +1,19 @@
+/* eslint-disable react/prop-types */
 import {Route, Routes} from "react-router-dom";
-import Dashboard from '../pages/private/Dashboard';
+import { useAuth } from "../context/AuthContext";
 
-function PrivateRoutes() {
-  return (
-    <Routes>
-        <Route path="/app" exact element={ <Dashboard /> } />
+// Components
+import Dashboard from "../pages/private/Dashboard"
+import Users from "../pages/private/management/Users";
+import Tables from "../pages/private/management/Tables";
+
+const PrivateRoutes = () => {
+  const auth = useAuth();
+  return auth && (
+    <Routes>  
+      <Route path="/dashboard" exact='true' element={ <Dashboard /> } />
+      <Route path="/users" exact='true' element={ <Users /> } />
+      <Route path="/tables" exact='true' element={ <Tables /> } />
     </Routes>
   )
 }

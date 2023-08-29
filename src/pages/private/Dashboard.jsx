@@ -1,7 +1,11 @@
-import React from 'react'
+import { Container } from "@mui/material"
 
-export default function Dashboard() {
+function Dashboard() {
   return (
-    <div>Dashboard</div>
+    <Container>
+      Dashboard
+    </Container>
   )
 }
+
+export default Dashboard
