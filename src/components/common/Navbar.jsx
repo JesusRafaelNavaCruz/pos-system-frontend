@@ -5,7 +5,7 @@ import { useTheme } from "@mui/material/styles";
 import { Avatar, Box, ButtonBase } from "@mui/material";
 
 //Icons
-import { BiMenu } from "react-icons/bi";
+import { IconMenu2 } from "@tabler/icons-react";
 
 const Navbar = ({ handleLeftDrawerToggle }) => {
   const theme = useTheme();
@@ -44,7 +44,7 @@ const Navbar = ({ handleLeftDrawerToggle }) => {
             onClick={handleLeftDrawerToggle}
             color="inherit"
           >
-            <BiMenu />
+            <IconMenu2 />
           </Avatar>
         </ButtonBase>
         <Box sx={{ flexGrow: 1 }} />

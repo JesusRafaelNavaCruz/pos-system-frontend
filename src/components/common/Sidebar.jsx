@@ -1,9 +1,10 @@
 import PropTypes from "prop-types";
 
-import { Box, Drawer, MenuList, useMediaQuery, useTheme } from "@mui/material";
+import { Box, Drawer, List, ListItem, ListItemButton, ListItemIcon, ListItemText, useMediaQuery, useTheme } from "@mui/material";
 
 import PerfectScrollbar from 'react-perfect-scrollbar';
 import { BrowserView } from 'react-device-detect';
+import { IconLayoutDashboard, IconToolsKitchen, IconChefHat, IconUsers, IconTag } from "@tabler/icons-react";
 
 const Sidebar = ({ drawerOpen, drawerToggle, window }) => {
   const theme = useTheme();
@@ -24,7 +25,58 @@ const Sidebar = ({ drawerOpen, drawerToggle, window }) => {
             paddingRight: "16px",
           }}
         >
-          <MenuList />
+          <List>
+            <ListItem>
+              <ListItemButton>
+                <ListItemIcon>
+                 <IconLayoutDashboard />
+                </ListItemIcon>
+                <ListItemText>
+                  Dashboard
+                </ListItemText>
+              </ListItemButton>
+            </ListItem>
+            <ListItem>
+              <ListItemButton>
+                <ListItemIcon>
+                 <IconChefHat />
+                </ListItemIcon>
+                <ListItemText>
+                  Menu
+                </ListItemText>
+              </ListItemButton>
+            </ListItem>
+            <ListItem>
+              <ListItemButton>
+                <ListItemIcon>
+                 <IconToolsKitchen />
+                </ListItemIcon>
+                <ListItemText>
+                  Comensales
+                </ListItemText>
+              </ListItemButton>
+            </ListItem>
+            <ListItem>
+              <ListItemButton>
+                <ListItemIcon>
+                 <IconUsers />
+                </ListItemIcon>
+                <ListItemText>
+                  Usuarios
+                </ListItemText>
+              </ListItemButton>
+            </ListItem>
+            <ListItem>
+              <ListItemButton>
+                <ListItemIcon>
+                 <IconTag />
+                </ListItemIcon>
+                <ListItemText>
+                  Categorias
+                </ListItemText>
+              </ListItemButton>
+            </ListItem>
+          </List>
         </PerfectScrollbar>
       </BrowserView>
     </>

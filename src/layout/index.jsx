@@ -1,7 +1,8 @@
 import { useState } from "react";
-import { AppBar, Box, Toolbar, useTheme, useMediaQuery, styled } from "@mui/material";
+import { AppBar, Box, Toolbar, useTheme, useMediaQuery, styled, CssBaseline } from "@mui/material";
 import Navbar from "../components/common/Navbar";
 import Sidebar from "../components/common/Sidebar";
+import { Outlet } from "react-router-dom";
 
 const drawerWidth = '240'
 
@@ -50,14 +51,24 @@ const AdminLayout = () => {
 
   return (
     <Box sx={{ display: 'flex'}}>
-      <AppBar>
+      <CssBaseline />
+      <AppBar
+        enableColorOnDark
+        position="fixed"
+        elevation={0}
+        color="inherit"
+        sx={{
+            bgColor: theme.palette.background.default,
+            transition: opened ? theme.transitions.create('width') : "none",
+        }}
+      >
         <Toolbar>
           <Navbar handleLeftDrawerToggle={handleLeftDrawerToggle} />
         </Toolbar>
       </AppBar>
       <Sidebar drawerOpen={!matchDownMd ? opened : !opened} drawerToggle={handleLeftDrawerToggle}/>
       <Main theme={theme} open={opened}>
-
+        <Outlet />
       </Main>
     </Box>
   );
